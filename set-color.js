@@ -218,6 +218,29 @@ function getClosestColorName(redValue, greenValue, blueValue, returnOption) { //
 // END color-name lookup/estimate functions
 
 
+// START alphaConversion -- NOTE: only works on rgba-to-rgb objects
+function calculateNonAlphaColor(rgbaColor, bgRgbColor) { 
+  var rgbaAlpha,
+      rgbaRed       = rgbaColor.r,
+      rgbaGreen     = rgbaColor.g,
+      rgbaBlue      = rgbaColor.b,
+      bgRed         = bgRgbColor.r,
+      bgGreen       = bgRgbColor.g,
+      bgBlue        = bgRgbColor.b;
+  if(rgbaColor.a > 1) { rgbaAlpha = rgbaColor.a * 0.01; } // compensates for cases where value is in percent instead of digital
+  else                { rgbaAlpha = rgbaColor.a;        }
+
+  var calculatedRed, calculatedGreen, calculatedBlue, colorSansAlpha;
+  var invertedAlpha = 1 - rgbaAlpha;
+  var calculatedRed   = Math.round((rgbaAlpha * (rgbaRed   / 255) + (invertedAlpha * (bgRed   / 255))) * 255);
+  var calculatedGreen = Math.round((rgbaAlpha * (rgbaGreen / 255) + (invertedAlpha * (bgGreen / 255))) * 255);
+  var calculatedBlue  = Math.round((rgbaAlpha * (rgbaBlue  / 255) + (invertedAlpha * (bgBlue  / 255))) * 255);
+  colorSansAlpha = { r: calculatedRed, g: calculatedGreen, b: calculatedBlue };
+  return colorSansAlpha;
+}
+// END alphaConversion
+
+
 
 // START general support tools
 function defineDataType(dataArg) {
