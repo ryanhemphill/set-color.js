@@ -1,7 +1,7 @@
 # set-color.js
 
 ### Description
-This tool can accept color expressed in all web formats (rgb, rgba, hex, hsl, hsla) in a variety of formats (array, object, string/css expression) and perform conversions to other formats. Performs autodetection of incoming formats. 
+This tool converts color expressed in all web formats (rgb, rgba, hex, hsl, hsla) in a variety of formats (array, object, string/css expression) and perform conversions to other formats. Performs autodetection of incoming formats. 
 
 ### Requirements: 
 None. Plugin is agnostic, no supporting javascript libraries required.
@@ -14,3 +14,9 @@ None. Plugin is agnostic, no supporting javascript libraries required.
 Current version does not support conversion of alpha transparency values to non alpha transparencies. Future versions will provide settings to fill in this gap via 2 strategies: 
 1. ignore alpha transparency
 2. compute foreground color with alpha transparency based on a background color.
+
+Also to come in future releases:
+*web-color formatting*
+1. accept web-color name (input)
+2. closest approximate web-color name (output)
+
