@@ -16,7 +16,7 @@ Current version does not support conversion of alpha transparency values to non 
 2. compute foreground color with alpha transparency based on a background color.
 
 Also to come in future releases:
-*web-color formatting*
+#### web-color formatting
 1. accept web-color name (input)
 2. closest approximate web-color name (output)
 
