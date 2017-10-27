@@ -2,7 +2,7 @@
 
 ### Description
 This tool converts color expressed in all web formats (rgb, rgba, hex, hsl, hsla) in a variety of formats (array, object, string/css expression) and perform conversions to other formats. Performs autodetection of incoming formats. <br>
-####New features: 
+#### New features: 
 1. RGBA > RGB conversion via calculated color based on background color
 2. closest approximate web-color name function
 3. web-color name-to-hex lookup function
