@@ -20,3 +20,6 @@ Also to come in future releases:
 1. accept web-color name (input)
 2. closest approximate web-color name (output)
 
+#### Click here for usage (wiki page)...
+https://github.com/ryanhemphill/set-color.js/wiki
+
